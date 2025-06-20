@@ -1,18 +1,39 @@
-const farmAnimals = 'cow horse sheep pig chicken';
+// 1) String: uses destructuring to declare five animal sounds
+const animalSounds = "moo neigh baa oink cluck";
+const [moo, neigh, baa, oink, cluck] = animalSounds.split("");
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// 2) String: uses destructuring to declare the four traditional animal names
+const animals = "cow horse sheep pig chicken";
+const [cow, horse, sheep, pig] = animals.split(" ");
 
-const muppet = {
-  muppetName: 'Miss Piggy',
-  color: 'pink',
-  song: 'Never Before, Never Again',
-  job: 'Cast member of The Muppet Show',
-  partner: 'Kermit'
+// 3) String: uses destructuring to declare the three traditional animal colors
+const colors = "black white brown";
+const [black, white, brown] = colors.split(" ");
+
+// 4) Array: uses destructuring to declare the seven traditional rainbow color variables using the color names
+const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [red, orange, yellow, green, blue, indigo, violet] = rainbow;
+
+// 5) Array: uses destructuring to declare six rainbow color variables using initials
+const [r, o, y, g, b, , v] = rainbow; // skipping indigo
+
+// 6) Array: uses destructuring to declare Indigo using indg
+const [ , , , , , indg ] = rainbow;
+
+// 7) Object: uses destructuring to assign all appropriate variables using the keys as the variable names
+const farmAnimals = {
+  cow: 'moo',
+  horse: 'neigh',
+  sheep: 'baa',
+  pig: 'oink',
+  chicken: 'cluck'
 };
+const { cow: farmCow, horse: farmHorse, sheep: farmSheep, pig: farmPig, chicken: farmChicken } = farmAnimals;
 
-const nestedMuppet = {
-  nestedName: 'Kermit',
-  nestedColor: 'green',
+// 8) Object: uses destructuring to assign songs 2 and 4, and Kermit's job and partner
+const muppet = {
+  name: 'Kermit',
+  color: 'green',
   album: {
     theMuppetMovie: {
       song1: 'Rainbow Connection',
@@ -21,9 +42,24 @@ const nestedMuppet = {
       song4: 'I Hope That Something Better Comes Along',
     },
   },
-  nestedJob: 'Host of The Muppet Show',
-  nestedPartner: 'Miss Piggy'
+  job: 'Host of The Muppet Show',
+  partner: 'Miss Piggy'
 };
+
+const {
+  album: {
+    theMuppetMovie: { song2, song4 }
+  },
+  job,
+  partner
+} = muppet;
+
+
+
+
+
+
+
 
 // Strings
 
